@@ -3,7 +3,6 @@ library(cld3)
 # function to detect the overall language of the lyrics
 detect_overall_language <- function(lyrics_text) {
   if (is.character(lyrics_text) && !is.na(lyrics_text) && nchar(lyrics_text) > 0) {
-    # Use the cld3 function to detect the language
     language <- tryCatch(cld3::detect_language(lyrics_text), error = function(e) return(NA))
     return(language)
   } else {
